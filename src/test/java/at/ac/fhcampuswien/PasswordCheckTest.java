@@ -18,4 +18,11 @@ public class PasswordCheckTest {
         PasswordCheck pw = new PasswordCheck();
         assertFalse(pw.isValid("password123456789101112131425"));
     }
+
+    @Test
+    @DisplayName("Password to short")
+    public void PasswordToShortTest(){
+        PasswordCheck pw = new PasswordCheck();
+        assertFalse(pw.isValid("pw12"));
+    }
 }
