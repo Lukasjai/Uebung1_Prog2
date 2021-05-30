@@ -68,4 +68,12 @@ public class PasswordCheckTest {
         assertFalse(actual);
     }
 
+    @Test
+    @DisplayName("Password must not contain following equal numbers")
+    public void PasswordNoFollowingEqualNumbersTest() {
+        PasswordCheck pw = new PasswordCheck();
+        boolean actual = pw.followingEqualNumbers("111");
+        assertFalse(actual);
+
+    }
 }
