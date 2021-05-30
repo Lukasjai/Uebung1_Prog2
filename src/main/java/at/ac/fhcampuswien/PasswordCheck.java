@@ -1,8 +1,9 @@
 package at.ac.fhcampuswien;
 
 public class PasswordCheck {
+
     public boolean isValid(String password) {
-        if (password.length() > 5 && password.length() < 25) {
+        if (password.length() > 8 && password.length() < 25) {
             return true;
         } else {
             return false;
@@ -17,10 +18,23 @@ public class PasswordCheck {
         }
     }
 
-/*
     public boolean bigSmallLetters(String password){
-        return true;
+        if (password.contains("[A-Z]+") && password.contains("[a-z]+")){
+            return false;
+        }else{
+            return true;
+        }
     }
-*/
+
+    public boolean SpecialSign(String pw){
+        if (pw.contains(")") || pw.contains("(") || pw.contains("#") || pw.contains( "$") || pw.contains( "?") || pw.contains( "!" ) || pw.contains( "%") || pw.contains( "/") || pw.contains( "@")) {
+            return true;
+        }else {
+            return false;
+
+        }
+    }
+
+
 
 }

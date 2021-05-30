@@ -9,7 +9,7 @@ public class PasswordCheckTest {
     @DisplayName("Test for Length of password")
     public void PasswordLengthTest() {
         PasswordCheck pw = new PasswordCheck();
-        assertTrue(pw.isValid("pw1234"));
+        assertTrue(pw.isValid("pw1234645"));
     }
 
     @Test
@@ -36,17 +36,21 @@ public class PasswordCheckTest {
         assertTrue(actual);
     }
 
-
-
-    /*
-       @Test
+    @Test
     @DisplayName("Password contains big and small letters")
     public void PasswordBigSmallLettersTest() {
         PasswordCheck pw = new PasswordCheck();
         boolean actual = pw.bigSmallLetters("AaBbCc");
         assertTrue(actual);
     }
-     */
+
+    @Test
+    @DisplayName("Password must contain one of these ()#$?!%/@")
+    public void PasswordSpecialSignTest() {
+        PasswordCheck pw = new PasswordCheck();
+        boolean actual = pw.SpecialSign("()#$?!%/@");
+        assertTrue(actual);
+    }
 
 
 }
