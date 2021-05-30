@@ -55,6 +55,11 @@ public class PasswordCheck {
 
 
     public boolean followingEqualNumbers (String pw){
+        for(int i=0; i<pw.length();i++){
+            if(pw.charAt(i) == pw.charAt(i+1) && pw.charAt(i+1) == pw.charAt(i+2) && String.valueOf(pw.charAt(i)).matches("[0-9]") ){
+                return false;
+            }
+        }
         return true;
     }
 }
