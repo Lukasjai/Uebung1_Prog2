@@ -60,4 +60,12 @@ public class PasswordCheckTest {
         assertFalse(actual);
     }
 
+    @Test
+    @DisplayName("Password must not contain following numbers")
+    public void PasswordNoFollowingNumbersTest() {
+        PasswordCheck pw = new PasswordCheck();
+        boolean actual = pw.followingNumbers("123");
+        assertFalse(actual);
+    }
+
 }

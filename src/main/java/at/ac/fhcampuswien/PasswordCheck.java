@@ -36,11 +36,21 @@ public class PasswordCheck {
     }
 
     public boolean noSpecialSign(String pw){
-        String password = pw.replaceAll("[A-z],[a-z],[0-9],[()#$?!%/@]","");
-        if(password == null){
+        String password = pw.replaceAll("[A-Z],[a-z],[0-9],[()#$?!%/@]","");
+        if(password.equals("")){
          return true;
-        }else { return false;
+        }else {
+            return false;
         }
+    }
+
+    public boolean followingNumbers (String pw){
+        for(int i=0; i<pw.length();i++){
+            if(pw.charAt(i) == pw.charAt(i+1)-1 && pw.charAt(i+1) == pw.charAt(i+2)-2 && pw.charAt(i) >= '0' && pw.charAt(i) <='9' ){
+                return false;
+            }
+        }
+        return true;
     }
 
 
