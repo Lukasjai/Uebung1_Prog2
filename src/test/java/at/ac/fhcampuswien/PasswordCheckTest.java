@@ -48,9 +48,16 @@ public class PasswordCheckTest {
     @DisplayName("Password must contain one of these ()#$?!%/@")
     public void PasswordSpecialSignTest() {
         PasswordCheck pw = new PasswordCheck();
-        boolean actual = pw.SpecialSign("()#$?!%/@");
+        boolean actual = pw.specialSign("()#$?!%/@");
         assertTrue(actual);
     }
 
+    @Test
+    @DisplayName("Password must not any other special signs than ()#$?!%/@")
+    public void PasswordNoSpecialSignTest() {
+        PasswordCheck pw = new PasswordCheck();
+        boolean actual = pw.noSpecialSign("€&§[]}+-");
+        assertFalse(actual);
+    }
 
 }

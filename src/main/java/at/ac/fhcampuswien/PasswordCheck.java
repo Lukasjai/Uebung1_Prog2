@@ -26,7 +26,7 @@ public class PasswordCheck {
         }
     }
 
-    public boolean SpecialSign(String pw){
+    public boolean specialSign(String pw){
         if (pw.contains(")") || pw.contains("(") || pw.contains("#") || pw.contains( "$") || pw.contains( "?") || pw.contains( "!" ) || pw.contains( "%") || pw.contains( "/") || pw.contains( "@")) {
             return true;
         }else {
@@ -35,6 +35,13 @@ public class PasswordCheck {
         }
     }
 
+    public boolean noSpecialSign(String pw){
+        String password = pw.replaceAll("[A-z],[a-z],[0-9],[()#$?!%/@]","");
+        if(password == null){
+         return true;
+        }else { return false;
+        }
+    }
 
 
 }
